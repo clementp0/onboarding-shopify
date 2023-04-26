@@ -1,0 +1,71 @@
+<p>
+    {{ section.settings.message}}
+    <span data-timer="{{ section.settings.date }}">
+      {{ section.settings.date | date: '%B %d, %Y' }}
+    </span>
+</p>
+<script type="text/javascript"></script>
+{% javascript %}
+ let timers = document.querySelectorAll("[data-timer]");
+
+setInterval(function () {
+  timers.forEach(function (element) {
+    let inputDate = new Date(element.dataset.timer);
+    let now = new Date();
+
+    const SECOND_IN_MS = 1000;
+    const MINUTE_IN_MS = 60 * SECOND_IN_MS;
+    const HOUR_IN_MS = 60 * MINUTE_IN_MS;
+    const DAY_IN_MS = 24 * HOUR_IN_MS;
+
+    let days = Math.floor((inputDate.getTime() - now.getTime()) / DAY_IN_MS);
+
+    let hours = Math.floor(
+      (inputDate.getTime() - now.getTime() - days * DAY_IN_MS) / HOUR_IN_MS
+    );
+
+    let minutes = Math.floor(
+      (inputDate.getTime() -
+        now.getTime() -
+        days * DAY_IN_MS -
+        hours * HOUR_IN_MS) /
+        MINUTE_IN_MS
+    );
+
+    let seconds = Math.floor(
+      (inputDate.getTime() -
+        now.getTime() -
+        days * DAY_IN_MS -
+        hours * HOUR_IN_MS -
+        minutes * MINUTE_IN_MS) /
+        SECOND_IN_MS
+    );
+
+    element.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  });
+}, 1000);
+
+{% endjavascript %}
+</script>
+
+{% schema %}
+{
+    "name": "Timer",
+    "presets": [
+        {
+            "name": "Timer"
+        }
+    ], "settings": [
+        {
+            "type": "text",
+            "id": "message",
+            "label": "Message"
+        },
+        {
+            "type": "text",
+            "id": "date",
+            "label": "Date"
+        }
+    ]
+}
+{% endschema %}
