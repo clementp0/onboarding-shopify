@@ -28,7 +28,7 @@
       "type": "timer",
       "settings": {
         "message": "Bonjour",
-        "date": "2023-09-25 12:00"
+        "date": "2023-09-25 12:00:00"
       }
     }
   },
