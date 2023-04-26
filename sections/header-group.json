@@ -36,8 +36,26 @@
       "settings": {
         "custom_liquid": "Origine Cuir :\n{% if product.metafields.origine.cuir != blank %}\n  <p>Made in : {{ product.metafields.origine.cuir }}<\/p>\n{% else %}\nAucune donnée\n{% endif %}",
         "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "9bb40e55-de9d-400f-8bf7-f3b5885fab2c": {
+      "type": "external-video",
+      "blocks": {
+        "908690f9-999b-4322-a127-fead617f9fad": {
+          "type": "external-video",
+          "settings": {
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "908690f9-999b-4322-a127-fead617f9fad"
+      ],
+      "settings": {
+        "heading": "Test video section"
       }
     }
   },
@@ -45,6 +63,7 @@
     "announcement-bar",
     "header",
     "2ce6a772-41cd-4e49-a12b-2963072415f8",
-    "131f34f1-7bb5-4606-b263-c785002737b6"
+    "131f34f1-7bb5-4606-b263-c785002737b6",
+    "9bb40e55-de9d-400f-8bf7-f3b5885fab2c"
   ]
 }
