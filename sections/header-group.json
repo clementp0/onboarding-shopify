@@ -23,10 +23,18 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "2ce6a772-41cd-4e49-a12b-2963072415f8": {
+      "type": "timer",
+      "settings": {
+        "message": "Bonjour",
+        "date": "2023-09-25 12:00"
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "2ce6a772-41cd-4e49-a12b-2963072415f8"
   ]
 }
