@@ -30,11 +30,21 @@
         "message": "Bonjour",
         "date": "2023-09-25 12:00:00"
       }
+    },
+    "131f34f1-7bb5-4606-b263-c785002737b6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% if product.metafields.origine.cuir != blank %}\n  <p>Made in : {{ product.metafields.origine.cuir }}<\/p>\n{% else %}\nAucune donnée\n{% endif %}",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "2ce6a772-41cd-4e49-a12b-2963072415f8"
+    "2ce6a772-41cd-4e49-a12b-2963072415f8",
+    "131f34f1-7bb5-4606-b263-c785002737b6"
   ]
 }
